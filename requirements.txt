@@ -1,0 +1,21 @@
+# Data handling and manipulation
+pandas==1.5.3
+numpy==1.24.4
+
+# Data preprocessing and scaling
+scikit-learn==1.3.1
+
+# Causal inference (for later stages)
+causalml==0.12.0
+dowhy==0.9
+
+# Visualization (for data analysis and visualization)
+matplotlib==3.7.2
+seaborn==0.12.2
+
+# Miscellaneous utilities
+pyyaml==6.0  # For configuration files if needed
+
+# Development environment (optional, for better coding experience)
+ipython==8.16.1
+jupyter==1.0.0
