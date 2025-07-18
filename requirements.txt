@@ -1,21 +1,171 @@
-# Data handling and manipulation
-pandas==1.5.3
-numpy==1.24.4
+# Core ML and Data Science - Python 3.12 Compatible
+numpy>=1.26.0
+pandas>=2.1.0
+scikit-learn>=1.3.0
+scipy>=1.11.0
+matplotlib>=3.8.0
+seaborn>=0.13.0
+plotly>=5.17.0
+bokeh>=3.3.0
+holoviews>=1.18.0
 
-# Data preprocessing and scaling
-scikit-learn==1.3.1
+# Advanced ML and Deep Learning
+torch>=2.1.0
+torchvision>=0.16.0
+tensorflow>=2.15.0
+keras>=2.15.0
+transformers>=4.35.0
+sentence-transformers>=2.2.2
 
-# Causal inference (for later stages)
-causalml==0.12.0
-dowhy==0.9
+# Graph Neural Networks and Network Analysis
+torch-geometric>=2.4.0
+networkx>=3.2.0
+python-louvain>=0.16
 
-# Visualization (for data analysis and visualization)
-matplotlib==3.7.2
-seaborn==0.12.2
+# Causal Inference
+causalml>=0.14.0
+dowhy>=0.9
+linearmodels>=5.0
+statsmodels>=0.14.0
+pingouin>=0.5.4
 
-# Miscellaneous utilities
-pyyaml==6.0  # For configuration files if needed
+# Optimization and Reinforcement Learning
+optuna>=3.4.0
+ray[tune]>=2.8.0
+stable-baselines3>=2.1.0
+gymnasium>=0.29.0
+pymoo>=0.6.0
+hyperopt>=0.2.7
 
-# Development environment (optional, for better coding experience)
-ipython==8.16.1
-jupyter==1.0.0
+# Quantum Computing Simulation - Fixed for Python 3.12
+qiskit>=0.45.0
+qiskit-aer>=0.12.0
+cirq>=1.3.0
+pennylane>=0.32.0
+
+# Federated Learning
+flwr>=1.6.0
+syft>=0.5.0
+
+# Advanced Analytics
+prophet>=1.1.4
+pykalman>=0.9.5
+pyts>=0.13.0
+tslearn>=0.6.0
+ruptures>=1.1.7
+
+# Feature Engineering and Selection
+feature-engine>=1.7.0
+boruta>=0.3
+shap>=0.43.0
+lime>=0.2.0.1
+eli5>=0.14.0
+catboost>=1.2.0
+
+# Model Interpretability and Explainability
+alibi>=0.8.0
+anchor-exp>=0.0.1.8
+interpret>=0.4.0
+pycebox>=0.0.1
+
+# Web API and Async
+fastapi>=0.104.0
+uvicorn[standard]>=0.24.0
+redis>=5.0.0
+celery>=5.3.0
+websockets>=12.0
+
+# Database and ORM
+sqlalchemy>=2.0.23
+alembic>=1.12.0
+psycopg2-binary>=2.9.9
+pymongo>=4.6.0
+
+# Monitoring and Logging
+mlflow>=2.8.0
+wandb>=0.16.0
+prometheus-client>=0.19.0
+structlog>=23.2.0
+sentry-sdk>=1.38.0
+
+# Testing and Quality
+pytest>=7.4.3
+pytest-asyncio>=0.21.1
+pytest-cov>=4.1.0
+black>=23.11.0
+flake8>=6.1.0
+mypy>=1.7.0
+
+# Development and CLI
+click>=8.1.7
+rich>=13.7.0
+typer>=0.9.0
+python-dotenv>=1.0.0
+pyyaml>=6.0.1
+
+# AWS and Cloud
+boto3>=1.34.0
+sagemaker>=2.200.0
+s3fs>=2023.12.0
+
+# Advanced Visualization
+dash>=2.14.0
+streamlit>=1.28.0
+gradio>=4.0.0
+panel>=1.3.0
+altair>=5.2.0
+
+# Time Series and Forecasting - Fixed for Python 3.12
+prophet>=1.1.4
+arch>=6.2.0
+pmdarima>=2.0.3
+neuralprophet>=0.6.0
+kats>=0.2.0
+
+# Anomaly Detection
+pyod>=1.1.0
+isolation-forest>=0.2.0
+lof>=0.1.0
+
+# Clustering and Dimensionality Reduction
+hdbscan>=0.8.33
+umap-learn>=0.5.5
+phate>=1.0.8
+leidenalg>=0.10.1
+
+# Natural Language Processing
+spacy>=3.7.0
+nltk>=3.8.1
+textblob>=0.17.1
+gensim>=4.3.0
+
+# Geospatial Analysis
+geopandas>=0.14.0
+folium>=0.15.0
+pyproj>=3.6.0
+
+# Financial Analytics
+yfinance>=0.2.28
+ta>=0.10.2
+empyrical>=0.5.5
+
+# Performance and Parallel Computing
+numba>=0.58.0
+dask>=2023.12.0
+joblib>=1.3.2
+multiprocessing-logging>=0.3.4
+
+# Security and Authentication
+cryptography>=41.0.7
+passlib>=1.7.4
+python-jose>=3.3.0
+
+# Documentation
+sphinx>=7.2.0
+sphinx-rtd-theme>=1.3.0
+myst-parser>=2.0.0
+
+# Additional fixes for Python 3.12
+setuptools>=69.0.0
+wheel>=0.42.0
+pip>=23.3.0
