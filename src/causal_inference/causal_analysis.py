@@ -73,10 +73,19 @@ class AdvancedCausalAnalyzer:
         # Handle missing values
         self.data = self.data.dropna(subset=[self.treatment_col, self.outcome_col])
         
+        # Filter confounders to only include columns that exist in the data
+        available_confounders = [col for col in self.confounders if col in self.data.columns]
+        if len(available_confounders) == 0:
+            # Fallback to basic numeric columns
+            numeric_cols = self.data.select_dtypes(include=[np.number]).columns.tolist()
+            available_confounders = [col for col in numeric_cols if col not in [self.treatment_col, self.outcome_col]][:5]
+        
+        self.confounders = available_confounders
+        
         # Encode categorical variables
         self.encoders = {}
         for col in self.confounders:
-            if self.data[col].dtype == 'object':
+            if col in self.data.columns and self.data[col].dtype == 'object':
                 le = LabelEncoder()
                 self.data[f'{col}_encoded'] = le.fit_transform(self.data[col].fillna('Unknown'))
                 self.encoders[col] = le

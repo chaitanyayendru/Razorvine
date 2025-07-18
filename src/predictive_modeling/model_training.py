@@ -90,11 +90,12 @@ class AdvancedPredictiveModeler:
         
         # Initialize MLflow with Windows-compatible path
         try:
-            mlflow.set_tracking_uri("sqlite:///mlflow.db")
+            # Use local file system instead of SQLite for better Windows compatibility
+            mlflow.set_tracking_uri("file:./mlruns")
         except Exception as e:
             print(f"⚠️ MLflow initialization warning: {e}")
-            # Fallback to local tracking
-            mlflow.set_tracking_uri("file:./mlruns")
+            # Disable MLflow if it fails
+            mlflow.set_tracking_uri(None)
         
         # Store models and results
         self.models = {}
@@ -257,10 +258,13 @@ class AdvancedPredictiveModeler:
                 }
                 
                 # Log to MLflow
-                mlflow.log_metrics(metrics)
-                if importance is not None:
-                    mlflow.log_artifact(importance.to_csv(), f"{model_name}_feature_importance.csv")
-                mlflow.sklearn.log_model(model, f"{model_name}_model")
+                try:
+                    mlflow.log_metrics(metrics)
+                    if importance is not None:
+                        mlflow.log_artifact(importance.to_csv(), f"{model_name}_feature_importance.csv")
+                    mlflow.sklearn.log_model(model, f"{model_name}_model")
+                except Exception as e:
+                    print(f"⚠️ MLflow logging warning for {model_name}: {e}")
         
         self.models.update(results)
         return results
@@ -336,8 +340,11 @@ class AdvancedPredictiveModeler:
             }
             
             # Log to MLflow
-            mlflow.log_metrics(metrics)
-            mlflow.keras.log_model(model, "deep_learning_model")
+            try:
+                mlflow.log_metrics(metrics)
+                mlflow.keras.log_model(model, "deep_learning_model")
+            except Exception as e:
+                print(f"⚠️ MLflow logging warning for deep learning: {e}")
             
             self.models['deep_learning'] = results
             return results
